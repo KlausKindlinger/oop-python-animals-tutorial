@@ -7,16 +7,28 @@ class Aweketime(object):
 		timeset = self.timeset()
 		if timeset == True:
 			return True
-		if self.start > self.end:
-			if self.start <= time.time:
-				return True
-			if time.time <= self.end:
-				return True
+
 		else:
 			return False
 
 	def timeset(self, time):
 		if self.start <= time.time <= self.end:
 			return True
+		else:
+			return False
+
+	def is_dayactive(self,time):
+		if self.start <= time.time <= self.end:
+			return True
+		else:
+			return False
+
+
+	def is_nightactive(self,time):
+		if self.start > self.end:
+			if self.start <= time.time:
+				return True
+			if time.time <= self.end:
+				return True
 		else:
 			return False
