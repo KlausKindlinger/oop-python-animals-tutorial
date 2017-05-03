@@ -7,7 +7,9 @@ class AwakeTimeDuration(object):
 		""" Checks if an animal or pet is day- or nightactive"""
 		da = self.dayactive(time)
 		na = self.nightactive(time)
-		if da or na == True:
+		if da == True:
+			return True
+		elif na == True:
 			return True
 		else:
 			return False
