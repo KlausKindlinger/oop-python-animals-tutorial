@@ -3,28 +3,28 @@ class Aweketime(object):
 		self.start = start
 		self.end = end
 
-	def has(self, time):
-		timeset = self.timeset()
-		if timeset == True:
+	def has(self):
+		da = self.dayactive()
+		na = self.nightactive()
+		if da or na == True:
 			return True
-
 		else:
 			return False
 
-	def timeset(self, time):
+#	def timeset(self, time):
+#		if self.start <= time.time <= self.end:
+#			return True
+#		else:
+#			return False
+
+	def dayactive(self,time):
 		if self.start <= time.time <= self.end:
 			return True
 		else:
 			return False
 
-	def is_dayactive(self,time):
-		if self.start <= time.time <= self.end:
-			return True
-		else:
-			return False
 
-
-	def is_nightactive(self,time):
+	def nightactive(self,time):
 		if self.start > self.end:
 			if self.start <= time.time:
 				return True
