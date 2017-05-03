@@ -20,11 +20,20 @@ class AwakeTimeDuration(object):
 		else:
 			return False
 
-	def nightactive(self, time):
+	def nightactive(self):
+		if self.is_nightactive() == True:
+			return True
+		else:
+			return False
+
+	def is_nightactive(self,):
 		if self.start > self.end:
-			if self.start <= time.time:
-				return True
-			if time.time <= self.end:
-				return True
+			return True
+		else:
+			return False
+
+	def is_dayactive(self,time):
+		if self.start <= time.time <= self.end:
+			return True
 		else:
 			return False
