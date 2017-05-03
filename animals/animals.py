@@ -42,7 +42,7 @@ class Animals(object):
 		self.mood = AnimalMoods(ANGRY)
 
 	def set_mood_from_time(self, time):
-		if self.aweketime.has(time):
+		if self.aweketime.check_if_in_awake_time_duration(time):
 			self.set_awake()
 		else:
 			self.set_sleep()
