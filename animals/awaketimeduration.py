@@ -4,36 +4,28 @@ class AwakeTimeDuration(object):
 		self.end = end
 
 	def check_if_in_awake_time_duration(self, time):
-		""" Checks if an animal or pet is day- or nightactive"""
-		da = self.dayactive(time)
-		na = self.nightactive(time)
-		if da == True:
-			return True
-		elif na == True:
-			return True
+		if self.is_dayactive():
+			status = self._time_in_day_duration(time)
+			return status
 		else:
-			return False
+			status = self._time_in_night_duration(time)
+			return status
 
-	def dayactive(self, time):
+	def _time_in_day_duration(self,time):
 		if self.start <= time.time <= self.end:
 			return True
-		else:
-			return False
+		return False
 
-	def nightactive(self):
-		if self.is_nightactive() == True:
-			return True
-		else:
+	def _time_in_night_duration(self, time):
+		if self.end < time.time < self.start:
 			return False
+		return True
 
-	def is_nightactive(self,):
+	def is_nightactive(self):
 		if self.start > self.end:
 			return True
 		else:
 			return False
 
-	def is_dayactive(self,time):
-		if self.start <= time.time <= self.end:
-			return True
-		else:
-			return False
+	def is_dayactive(self):
+		return not self.is_nightactive()
