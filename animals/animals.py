@@ -1,7 +1,7 @@
 from .animalmoods import AnimalMoods
 from .animalsounds import AnimalMoodSounds, AnimalMoodSoundsCollection
 from .animalmoods import AWAKE, SLEEPING, ANGRY
-from .aweketime import Aweketime
+from .awaketimeduration import AwakeTimeDuration
 
 
 class Animals(object):
@@ -20,12 +20,12 @@ class Animals(object):
 		moodsound = AnimalMoodSounds(ANGRY, self.ANGRY_SOUND)
 		self.moodsounds.add_moodsound(moodsound)
 
-		self.aweketime = Aweketime(8, 20)
+		self.aweketime = AwakeTimeDuration(8, 20)
 
 		Animals.counter += 1
 
 	def awake_time(self, start, end):
-		self.aweketime = Aweketime(start, end)
+		self.aweketime = AwakeTimeDuration(start, end)
 		return
 
 	def sound(self):

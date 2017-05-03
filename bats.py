@@ -1,5 +1,5 @@
 from animals import Animals
-from animals.aweketime import Aweketime
+from animals.awaketimeduration import AwakeTimeDuration
 
 class Bats(Animals):
 	counter = 0
@@ -12,7 +12,7 @@ class Bats(Animals):
 
 		Bats.counter += 1
 
-		self.aweketime = Aweketime(20, 8)
+		self.aweketime = AwakeTimeDuration(20, 8)
 
 		return
 

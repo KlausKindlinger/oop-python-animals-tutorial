@@ -1,9 +1,9 @@
-class Aweketime(object):
+class AwakeTimeDuration(object):
 	def __init__(self, start, end):
 		self.start = start
 		self.end = end
 
-	def has(self):
+	def check_if_in_awake_time_duration(self, time):
 		da = self.dayactive()
 		na = self.nightactive()
 		if da or na == True:
@@ -11,20 +11,19 @@ class Aweketime(object):
 		else:
 			return False
 
-#	def timeset(self, time):
-#		if self.start <= time.time <= self.end:
-#			return True
-#		else:
-#			return False
+		#	def timeset(self, time):
+		#		if self.start <= time.time <= self.end:
+		#			return True
+		#		else:
+		#			return False
 
-	def dayactive(self,time):
+	def dayactive(self, time):
 		if self.start <= time.time <= self.end:
 			return True
 		else:
 			return False
 
-
-	def nightactive(self,time):
+	def nightactive(self, time):
 		if self.start > self.end:
 			if self.start <= time.time:
 				return True
