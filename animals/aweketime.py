@@ -12,3 +12,5 @@ class Aweketime(object):
 			if time.time <= self.end:
 				return True
 		return False
+
+# ÄNDERUNG ZWECKS NEUER BRANCH
