@@ -32,7 +32,7 @@ polly.set_angry()
 print(polly.sound())
 
 dracula = Bats()
-
+print(dracula.sound())
 newpetlist = [sepp, dracula, shaun, bruno, hondo, fritz, minki, polly, shaun, polly]
 
 print("===<0>===")
@@ -70,3 +70,12 @@ for pet in newpetlist:
 
 print("===<3>===")
 
+for pet in newpetlist:
+	pet.set_mood_from_time(my_time)
+	if isinstance(pet, Pets):
+		snd = pet.sound()
+		print(snd)
+	else:
+		pass
+
+print(dracula.sound())

@@ -1,5 +1,5 @@
 from pets import Pets
-from animals.aweketime import Aweketime
+from animals.awaketimeduration import AwakeTimeDuration
 
 
 class Cats(Pets):
@@ -12,5 +12,5 @@ class Cats(Pets):
 		super(Cats, self).__init__(name)
 		Cats.counter += 1
 
-		self.aweketime = Aweketime(6, 20)
+		self.aweketime = AwakeTimeDuration(6, 20)
 		return
